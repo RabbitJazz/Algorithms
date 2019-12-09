@@ -20,6 +20,7 @@ class BinaryTree:
         return traversal
 
     def in_order_print(self, start, traversal):
+        """Left->Root->Right"""
         if start:
             traversal = self.in_order_print(start.left, traversal)
             traversal += str(start.data + "->")
@@ -27,6 +28,7 @@ class BinaryTree:
         return traversal
 
     def post_order_print(self, start, traversal):
+        """Left->Right->Root"""
         if start:
             traversal = self.post_order_print(start.left, traversal)
             traversal = self.post_order_print(start.right, traversal)
